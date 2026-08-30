@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SC Creations | Dream Exhibition Stalls</title>
+
+    <link rel="icon" type="image/png" href="logoo.jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Dynamic Announcement Bar (Manual Setup) -->
+    <div class="ad-announcement-bar" id="adBar">
+        <div class="ad-content">
+            <!-- 1. මෙතැනට ඔයාගේ Banner Image URL එක දාන්න -->
+            <img src="YOUR_IMAGE_URL_HERE.jpg" alt="Announcement Ad" class="ad-banner-img">
+            
+            <!-- 2. මෙතැනට ඔයාට ප්‍රදර්ශනය කිරීමට අවශ්‍ය විස්තරය දාන්න -->
+            <span class="ad-text-overlay">
+                🔥 ProFood ProPack & AgBiz 2026 | 21 – 22 – 23 Aug, Colombo | BMICH
+            </span>
+        </div>
+        <button class="close-ad-btn" id="closeAd" aria-label="Close Announcement">&times;</button>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="SC Creations Logo" class="brand-logo">
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#design">Design</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#customers">Our Clients</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-utilities">
+            <div class="theme-toggle">
+                <button id="theme-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>We Build Your <br><span class="highlight">Dream Exhibition Stall</span></h1>
+            <p>Premium event planning and structural exhibition designs tailored to make your brand stand out globally.</p>
+            <a href="#contact" class="btn-primary">Get a Quote</a>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="hero-video-wrapper">
+                <iframe 
+                    id="heroVideo"
+                    src="https://drive.google.com/file/d/1Y0LbgnNCsv7yAJk6tI_oHwBR4j82AwSl/preview?autoplay=1&mute=1" 
+                    class="hero-video" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen
+                    style="border: none;">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="design" class="section">
+        <h2>Innovative Designs</h2>
+        <div class="grid-container">
+            <div class="card">
+                <i class="fas fa-cubes card-icon"></i>
+                <h3>3D Stall Modeling</h3>
+                <p>See your stall before it gets built with state-of-the-art 3D walkthroughs.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-palette card-icon"></i>
+                <h3>Custom Building</h3>
+                <p>Unique exhibition builds crafted to reflect your corporate identity while maximizing functionality and visual impact.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-lightbulb card-icon"></i>
+                <h3>Creative Lighting</h3>
+                <p>Ambient and neon lighting accents designed to draw crowds straight to you.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section alt-bg">
+        <h2>Our Exhibition Showcase</h2>
+        <p class="section-subtitle">Real-world snapshots of structural designs built by our development team</p>
+        
+        <!-- Year Filter Buttons -->
+        <div class="filter-controls" style="display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+            <button class="btn-see-more filter-btn" data-year="previous">Previous</button>
+            <button class="btn-see-more filter-btn" data-year="2025">2025</button>
+            <button class="btn-see-more filter-btn" data-year="2026">2026</button>
+        </div>
+
+        <!-- Sub-Events Buttons List -->
+        <div id="subEventsContainer" class="sub-events-wrapper" style="display: none; margin-bottom: 30px;">
+            <h3 id="yearHeader" style="text-align: center; margin-bottom: 15px; width: 100%;">Selected Events</h3>
+            <div id="subEventsList" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;"></div>
+        </div>
+
+        <!-- Facebook Video Player Root -->
+        <div id="fb-root"></div>
+
+        <div class="gallery-grid">
+            <!-- 
+                ========================================================================================================
+                FACEBOOK VIDEO GALLERY (No JPEG images - Pure Facebook Video Embeds)
+                --------------------------------------------------------------------------------------------------------
+                Facebook share links must be wrapped by the Facebook video plugin endpoint and URL-encoded in the href parameter.
+                Example: https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D123456789&show_text=0&autoplay=1&mute=1
+                ========================================================================================================
+            -->
+
+            <!-- Facebook Video 1 -->
+            <div class="gallery-item video-item" data-fb-src="https://drive.google.com/file/d/1mLd5AMkx2zJxpPFEtdGfsa5I2mdmYmGF/preview">
+                <iframe 
+                    class="gallery-video-frame"
+                    src="https://drive.google.com/file/d/1mLd5AMkx2zJxpPFEtdGfsa5I2mdmYmGF/preview?autoplay=1&amp;mute=1" 
+                    scrolling="no" 
+                    frameborder="0" 
+                    allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+                <a class="gallery-facebook-link" href="https://drive.google.com/file/d/1mLd5AMkx2zJxpPFEtdGfsa5I2mdmYmGF/view?usp=sharing" target="_blank" rel="noopener" aria-label="Open Alli Foods video on Google Drive">
+                    <i class="fab fa-google-drive"></i> Open in Drive
+                </a>
+                <div class="gallery-overlay">
+                    <span class="gallery-badge">Alli Foods</span>
+                </div>
+                <div class="gallery-video-controls">
+                    <!-- Small Sound Icon on Bottom Left -->
+                    <button class="gallery-ctrl-btn sound-btn" aria-label="Toggle Audio" title="Turn Sound On/Off">
+                        <i class="fas fa-volume-xmark"></i>
+                    </button>
+                    <!-- Play and Pause Icon -->
+                    <button class="gallery-ctrl-btn play-btn" aria-label="Play or Pause Video" title="Play / Pause">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Google Drive Video 2 -->
+                <div class="gallery-item video-item" data-fb-src="https://drive.google.com/file/d/14MU0u-Kyn0bhc_cXZjuDFm0aqydlQPwb/preview">
+                <iframe 
+                    class="gallery-video-frame"
+                        src="https://drive.google.com/file/d/14MU0u-Kyn0bhc_cXZjuDFm0aqydlQPwb/preview?autoplay=1&amp;mute=1" 
+                    scrolling="no" 
+                    frameborder="0" 
+                    allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+                <a class="gallery-facebook-link" href="https://drive.google.com/file/d/14MU0u-Kyn0bhc_cXZjuDFm0aqydlQPwb/view?usp=sharing" target="_blank" rel="noopener" aria-label="Open Google Drive Video 2">
+                    <i class="fab fa-google-drive"></i> Open in Drive
+                </a>
+                <div class="gallery-overlay">
+                    <span class="gallery-badge">Harischandra Mills</span>
+                </div>
+                <div class="gallery-video-controls">
+                    <button class="gallery-ctrl-btn sound-btn" aria-label="Toggle Audio" title="Turn Sound On/Off">
+                        <i class="fas fa-volume-xmark"></i>
+                    </button>
+                    <button class="gallery-ctrl-btn play-btn" aria-label="Play or Pause Video" title="Play / Pause">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Google Drive Video 3 -->
+                <div class="gallery-item video-item" data-fb-src="https://drive.google.com/file/d/1gDeKOw6f81INYvNJGfFPVsie890UwH0Y/preview">
+                <iframe 
+                    class="gallery-video-frame"
+                        src="https://drive.google.com/file/d/1gDeKOw6f81INYvNJGfFPVsie890UwH0Y/preview?autoplay=1&amp;mute=1" 
+                    scrolling="no" 
+                    frameborder="0" 
+                    allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+                <a class="gallery-facebook-link" href="https://drive.google.com/file/d/1gDeKOw6f81INYvNJGfFPVsie890UwH0Y/view?usp=sharing" target="_blank" rel="noopener" aria-label="Open Google Drive Video 3">
+                    <i class="fab fa-google-drive"></i> Open in Drive
+                </a>
+                <div class="gallery-overlay">
+                    <span class="gallery-badge">Maharaja Foods</span>
+                </div>
+                <div class="gallery-video-controls">
+                    <button class="gallery-ctrl-btn sound-btn" aria-label="Toggle Audio" title="Turn Sound On/Off">
+                        <i class="fas fa-volume-xmark"></i>
+                    </button>
+                    <button class="gallery-ctrl-btn play-btn" aria-label="Play or Pause Video" title="Play / Pause">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Google Drive Video 4 -->
+                <div class="gallery-item video-item" data-fb-src="https://drive.google.com/file/d/19HdZB-Y3YrmKZdH8NSX47zwwcNwqsula/preview">
+                <iframe 
+                    class="gallery-video-frame"
+                        src="https://drive.google.com/file/d/19HdZB-Y3YrmKZdH8NSX47zwwcNwqsula/preview?autoplay=1&amp;mute=1" 
+                    scrolling="no" 
+                    frameborder="0" 
+                    allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+                <a class="gallery-facebook-link" href="https://drive.google.com/file/d/19HdZB-Y3YrmKZdH8NSX47zwwcNwqsula/view?usp=sharing" target="_blank" rel="noopener" aria-label="Open Google Drive Video 4">
+                    <i class="fab fa-google-drive"></i> Open in Drive
+                </a>
+                <div class="gallery-overlay">
+                    <span class="gallery-badge">Bureau Veritas</span>
+                </div>
+                <div class="gallery-video-controls">
+                    <button class="gallery-ctrl-btn sound-btn" aria-label="Toggle Audio" title="Turn Sound On/Off">
+                        <i class="fas fa-volume-xmark"></i>
+                    </button>
+                    <button class="gallery-ctrl-btn play-btn" aria-label="Play or Pause Video" title="Play / Pause">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Google Drive Video 5 -->
+                <div class="gallery-item video-item" data-fb-src="https://drive.google.com/file/d/180EMLhq-aSEpI_lZQvMETbC80Alp4qrA/preview">
+                <iframe 
+                    class="gallery-video-frame"
+                        src="https://drive.google.com/file/d/180EMLhq-aSEpI_lZQvMETbC80Alp4qrA/preview?autoplay=1&amp;mute=1" 
+                    scrolling="no" 
+                    frameborder="0" 
+                    allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+                <a class="gallery-facebook-link" href="https://drive.google.com/file/d/180EMLhq-aSEpI_lZQvMETbC80Alp4qrA/view?usp=sharing" target="_blank" rel="noopener" aria-label="Open Google Drive Video 5">
+                    <i class="fab fa-google-drive"></i> Open in Drive
+                </a>
+                <div class="gallery-overlay">
+                    <span class="gallery-badge">Softlogic Computers</span>
+                </div>
+                <div class="gallery-video-controls">
+                    <button class="gallery-ctrl-btn sound-btn" aria-label="Toggle Audio" title="Turn Sound On/Off">
+                        <i class="fas fa-volume-xmark"></i>
+                    </button>
+                    <button class="gallery-ctrl-btn play-btn" aria-label="Play or Pause Video" title="Play / Pause">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Google Drive Video 6 -->
+                <div class="gallery-item video-item" data-fb-src="https://drive.google.com/file/d/141PyyHLEOplMiWnqJ0LwjgWtZBoAymxP/preview">
+                <iframe 
+                    class="gallery-video-frame"
+                        src="https://drive.google.com/file/d/141PyyHLEOplMiWnqJ0LwjgWtZBoAymxP/preview?autoplay=1&amp;mute=1" 
+                    scrolling="no" 
+                    frameborder="0" 
+                    allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+                <a class="gallery-facebook-link" href="https://drive.google.com/file/d/141PyyHLEOplMiWnqJ0LwjgWtZBoAymxP/view?usp=sharing" target="_blank" rel="noopener" aria-label="Open Google Drive Video 6">
+                    <i class="fab fa-google-drive"></i> Open in Drive
+                </a>
+                <div class="gallery-overlay">
+                    <span class="gallery-badge">Kosher</span>
+                </div>
+                <div class="gallery-video-controls">
+                    <button class="gallery-ctrl-btn sound-btn" aria-label="Toggle Audio" title="Turn Sound On/Off">
+                        <i class="fas fa-volume-xmark"></i>
+                    </button>
+                    <button class="gallery-ctrl-btn play-btn" aria-label="Play or Pause Video" title="Play / Pause">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-action">
+            <a href="https://drive.google.com/drive/folders/1TzGo4qZQMwbYnrcr7VQINX7ws-zf1raC?usp=sharing" target="_blank" class="btn-see-more">
+                See More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="about-container">
+            <h2>About SC Creations</h2>
+            <p>Established in 2009, SC Creations has been a pioneer in turning empty event spaces into breathtaking brand experiences. We handle everything from conceptual architectural blueprints to final on-site physical fabrication. Our focus is delivering premium quality structures with flawless execution.</p>
+        </div>
+    </section>
+
+    <section id="customers" class="section alt-bg">
+        <h2>Our Valuable Customers</h2>
+
+        <div class="marquee-wrapper">
+            <div class="marquee">
+                <div class="marquee-content">
+                    <div class="logo-item"><img src="l1.jpg" alt=""></div>
+                    <div class="logo-item"><img src="l2.jpg" alt=""></div>
+                    <div class="logo-item"><img src="l3.png" alt=""></div>
+                    <div class="logo-item"><img src="l4.webp" alt=""></div>
+                    <div class="logo-item"><img src="l5.png" alt=""></div>
+                    <div class="logo-item"><img src="l6.png" alt=""></div>
+                    <div class="logo-item"><img src="l7.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l8.webp" alt=""></div>
+                    <div class="logo-item"><img src="l9.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l10.png" alt=""></div>
+                    <div class="logo-item"><img src="l11.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l13.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l14.png" alt=""></div>
+                    <div class="logo-item"><img src="l15.webp" alt=""></div>
+                    <div class="logo-item"><img src="l16.svg" alt=""></div>
+                    <div class="logo-item"><img src="l17.jpg" alt=""></div>
+                    <div class="logo-item"><img src="l18.png" alt=""></div>
+                    <div class="logo-item"><img src="l19.webp" alt=""></div>
+                    <div class="logo-item"><img src="l20.png" alt=""></div>
+                </div>
+            </div>
+
+            <div class="marquee reverse">
+                <div class="marquee-content">
+                    <div class="logo-item"><img src="l21.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l22.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l23.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l24.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l25.png" alt=""></div>
+                    <div class="logo-item"><img src="l26.png" alt=""></div>
+                    <div class="logo-item"><img src="l27.png" alt=""></div>
+                    <div class="logo-item"><img src="l28.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l29.png" alt=""></div>
+                    <div class="logo-item"><img src="l31.png" alt=""></div>
+                    <div class="logo-item"><img src="l32.png" alt=""></div>
+                    <div class="logo-item"><img src="l33.png" alt=""></div>
+                    <div class="logo-item"><img src="l34.png" alt=""></div>
+                    <div class="logo-item"><img src="l35.png" alt=""></div>
+                    <div class="logo-item"><img src="l36.webp" alt=""></div>
+                    <div class="logo-item"><img src="l37.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l37.png" alt=""></div>
+                    <div class="logo-item"><img src="l38.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l39.jpeg" alt=""></div>
+                    <div class="logo-item"><img src="l40.png" alt=""></div>
+                    <div class="logo-item"><img src="l45.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <form id="contactForm" action="https://formspree.io/f/xqeoblad" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="description">Project Description</label>
+                    <textarea id="description" name="description" rows="5" required placeholder="Tell us about your dream exhibition stall..."></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Email</button>
+                    <button type="reset" class="btn-clear"><i class="fas fa-trash-alt"></i> Clear</button>
+                </div>
+            </form>
+            
+            <div class="action-divider"><span>OR</span></div>
+
+            <div class="whatsapp-container">
+                <a href="https://wa.me/94772298014" target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Connect via WhatsApp
+                </a>
+            </div>
+
+            <div class="social-channels-header">
+                <h4>Follow Our Social Channels</h4>
+            </div>
+            <div class="social-links-container">
+                <a href="https://web.facebook.com/profile.php?id=61565891690955" target="_blank" class="social-icon fb" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/sc_creations2009?igsh=YjhoMjVibGx1Z3d0&utm_source=qr" target="_blank" class="social-icon ig" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@sc.creations65?_r=1&_t=ZS-973eEgA4IfV" target="_blank" class="social-icon tt" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCtTYqtr168-8qXHCvmwhRlQ" target="_blank" class="social-icon yt" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>SC Creations</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
