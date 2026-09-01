@@ -27,6 +27,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const heroVideo = document.getElementById('heroVideo');
+    if (heroVideo) {
+        const heroSrc = new URL(heroVideo.src);
+        heroSrc.searchParams.set('autoplay', '1');
+        heroSrc.searchParams.set('mute', '1');
+        heroVideo.src = heroSrc.toString();
+        heroVideo.muted = true;
+    }
+
+    // --- POPUP ADVERTISEMENT ON PAGE LOAD ---
+    const adPopup = document.getElementById('adPopup');
+    const closePopupBtn = document.getElementById('closePopupBtn');
+
+    if (adPopup) {
+        adPopup.classList.add('show');
+
+        const closePopup = () => adPopup.classList.remove('show');
+
+        if (closePopupBtn) {
+            closePopupBtn.addEventListener('click', closePopup);
+        }
+
+        adPopup.querySelectorAll('[data-close-popup]').forEach(element => {
+            element.addEventListener('click', closePopup);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && adPopup.classList.contains('show')) {
+                closePopup();
+            }
+        });
+    }
+
     // --- EXHIBITION SHOWCASE EVENTS SELECTION LOGIC ---
     const exhibitionShows = [
         "ProFood",
