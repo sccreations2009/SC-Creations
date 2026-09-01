@@ -99,8 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     showBtn.style.padding = '6px 14px';
                     showBtn.style.fontSize = '0.85rem';
                     showBtn.textContent = show;
-                    
+
                     showBtn.addEventListener('click', () => {
+                        if (year === '2026' && show === 'ProFood') {
+                            window.open('https://drive.google.com/drive/folders/16uSeT2URJAcRnUXRPvSa1qSJWCKDapeC?usp=sharing', '_blank', 'noopener,noreferrer');
+                            return;
+                        }
+
                         alert(`Filtering showcase for ${show} (${year})`);
                     });
 
