@@ -154,12 +154,17 @@ body {
 }
 
 .ad-popup-image {
-    display: block;
+    display: none;
     width: 100%;
     height: auto;
     max-height: 90vh;
     object-fit: contain;
     background: #111827;
+}
+
+.ad-popup-image.active {
+    display: block;
+    opacity: 1;
 }
 
 .ad-popup-close {

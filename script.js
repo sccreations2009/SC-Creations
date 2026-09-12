@@ -39,11 +39,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- POPUP ADVERTISEMENT ON PAGE LOAD ---
     const adPopup = document.getElementById('adPopup');
     const closePopupBtn = document.getElementById('closePopupBtn');
+    const adPopupImages = adPopup ? adPopup.querySelectorAll('[data-ad-slide]') : [];
+    let adSlideInterval;
 
-    if (adPopup) {
+    if (adPopup && adPopupImages.length) {
         adPopup.classList.add('show');
 
-        const closePopup = () => adPopup.classList.remove('show');
+        let currentAdIndex = 0;
+        adSlideInterval = window.setInterval(() => {
+            currentAdIndex = (currentAdIndex + 1) % adPopupImages.length;
+            adPopupImages.forEach((image, index) => {
+                image.classList.toggle('active', index === currentAdIndex);
+            });
+        }, 3000);
+
+        const closePopup = () => {
+            adPopup.classList.remove('show');
+            window.clearInterval(adSlideInterval);
+        };
 
         if (closePopupBtn) {
             closePopupBtn.addEventListener('click', closePopup);
