@@ -114,6 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     showBtn.textContent = show;
 
                     showBtn.addEventListener('click', () => {
+                        if (year === '2026' && show === 'Hotel Asia & Culinary Challenge') {
+                            window.open('https://drive.google.com/drive/folders/1hEdOYJFVNSlJ4d80MtzH1BeUM1Xu4H0O?usp=sharing', '_blank', 'noopener,noreferrer');
+                            return;
+                        }
+
                         if (year === '2026' && show === 'ProFood') {
                             window.open('https://drive.google.com/drive/folders/16uSeT2URJAcRnUXRPvSa1qSJWCKDapeC?usp=sharing', '_blank', 'noopener,noreferrer');
                             return;
